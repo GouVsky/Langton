@@ -8,5 +8,6 @@ window = Window("Langton Ant")
 checkerboard = Checkerboard(window, window.get_width(), window.get_height())
 
 checkerboard.create_board(20, 20)
+checkerboard.fill_square(10, 6)
 
 window.display()

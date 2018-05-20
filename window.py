@@ -14,12 +14,14 @@ class Window(Tk):
 		self.window_title = title
 		
 		
+		
 	def center(self):
 		
 		# We center the window.
 		
 		self.x = self.winfo_screenwidth() / 2 - self.width / 2
 		self.y = self.winfo_screenheight() / 2 - self.height / 2
+			
 				
 		
 	def display(self):
@@ -33,9 +35,11 @@ class Window(Tk):
 		self.mainloop();
 
 
+
 	def get_width(self):
 		
 		return self.width
+		
 		
 		
 	def get_height(self):
