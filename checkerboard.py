@@ -24,13 +24,13 @@ class Checkerboard(Canvas):
 		squares_width = self.width / number_squares_row
 		squares_height = self.height / number_squares_column
 		
-		for i in range (0, number_squares_row + 1):
+		for i in range (0, number_squares_row):
 
 			squares_by_row = []
 
 			x1 = i * squares_width
 
-			for j in range (0, number_squares_column + 1):
+			for j in range (0, number_squares_column):
 				
 				y1 = j * squares_height
 								
@@ -40,13 +40,15 @@ class Checkerboard(Canvas):
 	
 	
 	
-	def fill_square(self, row, column):
+	def fill_square(self, row, column, color):
 		
-		square = self.squares[column][row]
+		square = self.squares[row][column]
 		
-		x1 = square.get_x()
-		y1 = square.get_y()
-		x2 = x1 + square.get_width()
-		y2 = y1 + square.get_height()
+		x1 = square.x
+		y1 = square.y
+		x2 = x1 + square.width
+		y2 = y1 + square.height
 		
-		self.create_rectangle(x1, y1, x2, y2, fill='black')
+		square.color = color
+		
+		self.create_rectangle(x1, y1, x2, y2, fill=color, outline=color)

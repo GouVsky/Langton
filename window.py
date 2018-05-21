@@ -33,15 +33,3 @@ class Window(Tk):
 		self.resizable(False, False)
 				
 		self.mainloop();
-
-
-
-	def get_width(self):
-		
-		return self.width
-		
-		
-		
-	def get_height(self):
-		
-		return self.height
