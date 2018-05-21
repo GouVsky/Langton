@@ -7,16 +7,22 @@ from checkerboard import Checkerboard
 window = Window("Langton Ant")
 
 
-checkerboard = Checkerboard(window, window.width, window.height)
+width = 150
+height = 150
 
-checkerboard.create_board(8, 8)
+checkerboard = Checkerboard(window, window.width, window.height, 'white')
 
-ant = Ant(3, 3, 'black')
+checkerboard.create_board(width, height)
+
+ant = Ant(width / 2, height / 2, 'black')
 
 
 game = Game(ant, checkerboard)
 
-game.run()
-
+for i in range (0, 12000):
+	
+	game.run()
+	
+	window.update()
 
 window.display()

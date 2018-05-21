@@ -9,29 +9,26 @@ class Game:
 
 	def run(self):
 		
-		for i in range (0, 11):
+		x = self.ant.x
+		y = self.ant.y
+		
+		square = self.checkerboard.squares[self.ant.x][self.ant.y]
+		
+		color = None
+		
+		if (square.color == 'white'):
 			
-			x = self.ant.x
-			y = self.ant.y
+			color = self.ant.color
 			
-			square = self.checkerboard.squares[self.ant.x][self.ant.y]
+			self.ant.rotate_right()
 			
-			color = None
+		elif (square.color == self.ant.color):
 			
-			if (square.color == 'white'):
-				
-				color = self.ant.color
-				
-				self.ant.rotate_right()
-				
-			elif (square.color == self.ant.color):
-				
-				color = 'white'
-				
-				self.ant.rotate_left()
+			color = 'white'
+			
+			self.ant.rotate_left()
 
 
-			self.checkerboard.fill_square(self.ant.x, self.ant.y, color)
+		self.checkerboard.fill_square(self.ant.x, self.ant.y, color)
 
-			self.ant.move()
-			
+		self.ant.move()

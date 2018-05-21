@@ -13,6 +13,12 @@ class Window(Tk):
 		self.height = 500
 		self.window_title = title
 		
+		self.center()
+		
+		self.geometry("%dx%d+%d+%d" % (self.width, self.height, self.x, self.y))
+		self.title(self.window_title)
+		self.resizable(False, False)
+		
 		
 		
 	def center(self):
@@ -25,11 +31,5 @@ class Window(Tk):
 				
 		
 	def display(self):
-					
-		self.center()
 		
-		self.geometry("%dx%d+%d+%d" % (self.width, self.height, self.x, self.y))
-		self.title(self.window_title)
-		self.resizable(False, False)
-				
 		self.mainloop();

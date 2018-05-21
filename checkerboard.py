@@ -5,12 +5,13 @@ from square import Square
 
 class Checkerboard(Canvas):
 	
-	def __init__(self, window, board_width, board_height):
+	def __init__(self, window, board_width, board_height, background_color):
 		
-		Canvas.__init__(self, window, width=board_width, height=board_height, background='white')
+		Canvas.__init__(self, window, width=board_width, height=board_height, background=background_color)
 		
 		self.width = board_width
 		self.height = board_height
+		self.background_color = background_color
 		
 		# In fact a list of lists.
 		self.squares = []
@@ -34,7 +35,7 @@ class Checkerboard(Canvas):
 				
 				y1 = j * squares_height
 								
-				squares_by_row.append(Square(x1, y1, squares_width, squares_height, 'white'))
+				squares_by_row.append(Square(x1, y1, squares_width, squares_height, self.background_color))
 			
 			self.squares.append(squares_by_row)
 	
